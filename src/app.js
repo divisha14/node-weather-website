@@ -1,8 +1,8 @@
 const path = require('path')
 const express = require('express')
 const hbs=require('hbs')
-const geocode=require('./utils/geocode')
-const forecast=require('./utils/forecast')
+const geocode=require('./utils/geocode.js')
+const forecast=require('./utils/forecast.js')
 const { request } = require('http')
 const app = express()
 const port =process.env.PORT || 3000
@@ -42,14 +42,6 @@ app.get('/help', (req,res) =>
     })
 }
 )
-// app.get('/About', (req,res) =>
-// {
-//     res.send({
-//         name:'Divisha',
-//         age:19
-//     })
-// }
-// )
 app.get('/Weather', (req,res) =>
 {
     if(!req.query.address)
